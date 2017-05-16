@@ -1,0 +1,91 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 06-abr-2017, 9:49:31
+    Author     : User
+*/
+footer {
+    background-color: #3f8797; 
+    color: white;
+    width: 100%;
+    font-family: 'Lato', sans-serif;    
+}
+
+.panel-arriba{
+    background-color: #3f8797;
+}
+
+.barra-arriba{
+    background-color: #41aac1;
+}
+
+.texto-fuerte{
+    color: black;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.texto-link{
+    color: white;
+}
+
+button{
+    background-color: #3498DB;
+    color: white;
+    border-radius: 5px;
+    margin: 10px 5px;
+    margin-top: 10px;
+    margin-right: 5px;
+    margin-bottom: 10px;
+    margin-left: 5px;
+}
+
+#teclado, #monitor,#parlantes, #mouse {
+     background-color: #3f8797;
+     border-color: black;
+     border-style: solid;
+     font-family: 'Lato', sans-serif;
+     color: white;
+     border-width: 2px;
+}
+
+/*Monitor*/
+#imagen0{
+    width: 266px;
+    height: 266px;
+    position: relative;
+    right: -180px;
+}
+
+/*Teclado*/
+#imagen1{
+    align-content: center;
+    position: relative;
+    right: -180px;
+}
+
+/*Mouse*/
+#imagen2{
+    width: 66px;
+    height: 55px;
+    position: relative;
+    right: -180px;
+}
+
+/*Parlantes*/
+#imagen3{
+    position: relative;
+    top: 80px;
+    right: 240px;
+}
+
+#resetear{
+	top: 150px;
+}
+
+.thumbnail{
+    height:500px;
+}
