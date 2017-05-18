@@ -1,3 +1,5 @@
+@extends('layouts.app')
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -9,35 +11,9 @@
         <link href="css/bootstrap.min.css" rel="stylesheet">
                 <!-- Estilo Propio -->
         <link href="css/estilo1.css" rel="stylesheet" id="linkestilo">
-        <!-- Bootstrap -->
-        <!-- Estilo Propio -->
-        <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-        <!--[if lt IE 9]>
-          <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-          <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-        <![endif]-->
     </head>
     <body>
-        <div class="container-fluid panel-arriba">
-            <nav class="navbar navbar-default barra-arriba">
-                <img class="pull-left" src ="src/logo.png"/>
-                <div class="container-fluid" >
-                    <!-- Collect the nav links, forms, and other content for toggling -->
-                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                        <ul class="nav navbar-nav navbar-right">
-							<div>
-								<button id = "resetear" >Resetear Pedido </button>
-							</div>
-                            <li>
-                                <img src ="src/carrito.png" alt="Imagen Carro de Compas"/>
-                                <h1 class="texto-fuerte" id="carrito">Items: 0 </h1>
-                            </li>
-                        </ul>
-                    </div><!-- /.navbar-collapse -->
-                </div><!-- /.container-fluid -->
-            </nav>
-        </div>
+
         <div class="container">
             <div class="row well">
 

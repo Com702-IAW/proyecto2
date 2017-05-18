@@ -14,5 +14,6 @@ class DatabaseSeeder extends Seeder
          $this->call(MonitoresSeeder::class);
          $this->call(TecladosSeeder::class);
          $this->call(MousesSeeder::class);
+         $this->call(AdminSeeder::class);
     }
 }

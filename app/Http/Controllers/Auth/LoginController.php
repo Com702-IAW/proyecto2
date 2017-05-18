@@ -4,36 +4,71 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Auth;
+use Socialite;
 
 class LoginController extends Controller
 {
-    /*
-    |--------------------------------------------------------------------------
-    | Login Controller
-    |--------------------------------------------------------------------------
-    |
-    | This controller handles authenticating users for the application and
-    | redirecting them to your home screen. The controller uses a trait
-    | to conveniently provide its functionality to your applications.
-    |
-    */
+  /*  use AuthenticatesUsers;
+    protected $redirectTo = '/home';
+
+    public function __construct()
+    {
+        $this->middleware('guest')->except('logout');
+        return view('welcome');
+    }*/
+
+    public function controlar(){
+      $logueado = true;
+      if (Auth::guest()){
+          $logueado = false;
+          return view('Auth\login')->with('logueado',$logueado);
+      }
+      else
+        return view('componentes/index');
+    }
+
+    public function showLoginForm(){
+      $logueado = true;
+      return view ('auth\login');
+    }
 
     use AuthenticatesUsers;
 
-    /**
-     * Where to redirect users after login.
-     *
-     * @var string
-     */
-    protected $redirectTo = '/home';
-
-    /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
     public function __construct()
     {
         $this->middleware('guest')->except('logout');
     }
+
+    public function logout(){
+      Auth::logout();
+          // Volvemos al login y mostramos un mensaje indicando que se cerró la sesión
+      return view('auth/login');
+    }
 }
+
+/*
+
+  public function redirectToProvider(){
+      return Socialite::driver('github')->redirect();
+  }
+
+  public function postLogin(){
+    return view ('home');
+  }
+
+  public function handleProviderCallback(){
+
+      $github = Socialite::driver('github')->user();
+      $user = User::whereEmail($github->getEmail())->first();
+       if (!$user) {
+           $user = User::create([
+               'email' => $github->getEmail(),
+               'name' => $github->getName(),
+               'password' => '<no_pass>',
+           ]);
+       }
+       auth()->login($user);
+       return redirect()->to('/home');
+   }
+}*/

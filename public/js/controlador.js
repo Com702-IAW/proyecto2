@@ -77,9 +77,9 @@ function ordenarComponentes(componentes) {
 }
 
 function actualizarPedido(componente) {
-    jsonCarrito[componente.id] = componente;
-    $("#imagen" + componente.id).attr("src", componente.imagen);
-    var total = computarTotal();
+  jsonCarrito[componente.id] = componente;
+  $("#imagen" + componente.id).attr("src", componente.imagen);
+  var total = computarTotal();
 	$("#preciototal").text("El precio total es: $" + total);
 
 }
@@ -98,7 +98,6 @@ function computarTotal() {
     }
 	$("#carrito").text("Items: " + cant);
 	localStorage.setItem("PedidoAnterior",JSON.stringify(jsonCarrito));
-
 	return total;
 }
 

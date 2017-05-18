@@ -19,25 +19,47 @@
         <![endif]-->
     </head>
     <body>
-        <div class="container-fluid panel-arriba">
-            <nav class="navbar navbar-default barra-arriba">
-                <img class="pull-left" src ="src/logo.png"/>
-                <div class="container-fluid" >
-                    <!-- Collect the nav links, forms, and other content for toggling -->
-                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                        <ul class="nav navbar-nav navbar-right">
-							<div>
-								<button id = "resetear" >Resetear Pedido </button>
-							</div>
-                            <li>
-                                <img src ="src/carrito.png" alt="Imagen Carro de Compas"/>
-                                <h1 class="texto-fuerte" id="carrito">Items: 0 </h1>
-                            </li>
-                        </ul>
-                    </div><!-- /.navbar-collapse -->
-                </div><!-- /.container-fluid -->
-            </nav>
-        </div>
+      <div class="collapse navbar-collapse" id="app-navbar-collapse">
+          <!-- Left Side Of Navbar -->
+          <ul class="nav navbar-nav">
+              &nbsp;
+          </ul>
+          <!-- Right Side Of Navbar -->
+          <ul class="nav navbar-nav navbar-right">
+              <!-- Authentication Links -->
+              @if (Auth::guest())
+                  <li><a href="{{ route('login') }}">Login</a></li>
+                  <li><a href="{{ route('register') }}">Register</a></li>
+              @else
+                  <!--  <div>
+                          <img src ="src/carrito.png" alt="Imagen Carro de Compas"/>
+                          <h1 class="texto-fuerte" id="carrito">Items: 0 </h1>
+                    </div>-->
+                    <div>
+                      <button id = "resetear" >Resetear Pedido </button>
+
+                    </div>
+                  <li class="dropdown">
+                      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                          {{ Auth::user()->name }} <span class="caret"></span>
+                      </a>
+                      <ul class="dropdown-menu" role="menu">
+                          <li>
+                              <a href="{{ route('logout') }}"
+                                  onclick="event.preventDefault();
+                                           document.getElementById('logout-form').submit();">
+                                  Logout
+                              </a>
+
+                              <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                  {{ csrf_field() }}
+                              </form>
+                          </li>
+                      </ul>
+                  </li>
+              @endif
+          </ul>
+      </div>
         <div class="container">
             <div class="row well">
 
@@ -147,7 +169,6 @@
                             </p>
                             <p>
                                 <a class="texto-link" href="#" id="estilo2" >Estilo 2 </a>
-
                             </p>
                         </div>
                     </div>
@@ -160,8 +181,8 @@
         <script type="text/javascript" src="js/jquery-1.11.0.min.js"></script>
         <script type="text/javascript" src="js/vistaComponentes.js"></script>
         <script type="text/javascript" src="js/controlador.js"></script>
-         Include all compiled plugins (below), or include individual files as needed
-        <script src="js/bootstrap.min.js"></script>-
+        <script type="text/javascript" src="js/carrito.js"></script>
+        <script src="js/bootstrap.min.js"></script>
 
     </body>
 </html>

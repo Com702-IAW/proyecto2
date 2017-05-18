@@ -11,10 +11,20 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
-Route::get('/componentes', 'ComponenteController@index');
+Route::get('/', 'ComponenteController@index');
 
 Route::get('/componentes/json', 'ComponenteController@json');
+
+Auth::routes();
+
+Route::get('/logout', 'Auth\LoginController@logout');
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('login/github', 'Auth\LoginController@redirectToProvider')->name('github');
+
+Route::get('login/github/callback', 'Auth\LoginController@handleProviderCallback');
+
+Route::get('/redirect', 'SocialAuthController@redirect');
+
+Route::get('/callback', 'SocialAuthController@callback');
