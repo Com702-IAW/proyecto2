@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Auth;
 use Socialite;
-
+use Redirect;
 class LoginController extends Controller
 {
   /*  use AuthenticatesUsers;
@@ -25,7 +25,7 @@ class LoginController extends Controller
           return view('Auth\login')->with('logueado',$logueado);
       }
       else
-        return view('componentes/index');
+       return redirect('home');
     }
 
     public function showLoginForm(){
@@ -42,8 +42,7 @@ class LoginController extends Controller
 
     public function logout(){
       Auth::logout();
-          // Volvemos al login y mostramos un mensaje indicando que se cerró la sesión
-      return view('auth/login');
+       return redirect('home');
     }
 }
 

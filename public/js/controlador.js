@@ -42,10 +42,10 @@ $(document).ready(function(){
 			$("#imagen"+index).attr("src","");
 		}
 		$("#preciototal").text("");
-		$("#imagen0").attr("src","src/pregunta.png");
-		$("#imagen1").attr("src","src/pregunta1.png");
-		$("#imagen2").attr("src","src/pregunta1.png");
-		$("#imagen3").attr("src","src/pregunta1.png");
+		$("#imagen0").attr("src","img/loading.gif");
+		$("#imagen1").attr("src","img/loading.gif");
+		$("#imagen2").attr("src","img/loading.gif");
+		$("#imagen3").attr("src","img/loading.gif");
 		$("#carrito").text("Items: 0");
 	})
 });
@@ -77,11 +77,20 @@ function ordenarComponentes(componentes) {
 }
 
 function actualizarPedido(componente) {
-  jsonCarrito[componente.id] = componente;
-  $("#imagen" + componente.id).attr("src", componente.imagen);
-  var total = computarTotal();
+    jsonCarrito[componente.id] = componente;
+    $("#imagen" + componente.id).attr("src", componente.imagen);
+    var total = computarTotal();
 	$("#preciototal").text("El precio total es: $" + total);
+}
 
+function eliminarItem(componente) {
+    jsonCarrito[componente.id] = null;
+    ruta = "src/pregunta1.png";
+    if (componente.id == 0)
+        ruta = "src/pregunta.png";
+    $("#imagen"+componente.id).attr("src",ruta);
+    var total = computarTotal();
+    $("#preciototal").text("El precio total es: $" + total);
 }
 
 function computarTotal() {
@@ -98,6 +107,7 @@ function computarTotal() {
     }
 	$("#carrito").text("Items: " + cant);
 	localStorage.setItem("PedidoAnterior",JSON.stringify(jsonCarrito));
+
 	return total;
 }
 

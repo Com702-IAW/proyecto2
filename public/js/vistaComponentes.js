@@ -27,10 +27,18 @@ function agregarComponente(componente,indice) {
     div.append(segundoTex);
     div.append(tercerTex);
     var boton = $("<button></button>").text("Agregar al carrito");
+    var botonB = $("<button></button>").text("Borrar del carrito");
     boton.attr("id", indice);
     boton.click(function() {
         actualizarPedido(componente);
     });
+    boton.attr("id", indice);
+    botonB.click(function() {
+        eliminarItem(componente);
+    });
     div.append(boton);
+    var cuartoTex = $("<p></p>").text("");
+    div.append(cuartoTex);
+    div.append(botonB);
     $("#collapse" + componente.id).append(div);
 }

@@ -17,9 +17,13 @@ Route::get('/componentes/json', 'ComponenteController@json');
 
 Auth::routes();
 
+Route::get('/producto','ComponenteController@producto')->name('producto');
+
 Route::get('/logout', 'Auth\LoginController@logout');
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::post('/panelAdmin', 'AdminController@index')->name('panelAdmin');
 
 Route::get('login/github', 'Auth\LoginController@redirectToProvider')->name('github');
 

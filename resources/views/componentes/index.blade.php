@@ -1,188 +1,336 @@
+@extends('layouts.app')
+
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-        <title>Home</title>
-        <link href="css/bootstrap.min.css" rel="stylesheet">
-                <!-- Estilo Propio -->
-        <link href="css/estilo1.css" rel="stylesheet" id="linkestilo">
-        <!-- Bootstrap -->
-        <!-- Estilo Propio -->
-        <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-        <!--[if lt IE 9]>
-          <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-          <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-        <![endif]-->
-    </head>
-    <body>
-      <div class="collapse navbar-collapse" id="app-navbar-collapse">
-          <!-- Left Side Of Navbar -->
-          <ul class="nav navbar-nav">
-              &nbsp;
-          </ul>
-          <!-- Right Side Of Navbar -->
-          <ul class="nav navbar-nav navbar-right">
-              <!-- Authentication Links -->
-              @if (Auth::guest())
-                  <li><a href="{{ route('login') }}">Login</a></li>
-                  <li><a href="{{ route('register') }}">Register</a></li>
-              @else
-                  <!--  <div>
-                          <img src ="src/carrito.png" alt="Imagen Carro de Compas"/>
-                          <h1 class="texto-fuerte" id="carrito">Items: 0 </h1>
-                    </div>-->
-                    <div>
-                      <button id = "resetear" >Resetear Pedido </button>
+ <html class="no-js"> <!--<![endif]-->
 
-                    </div>
-                  <li class="dropdown">
-                      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                          {{ Auth::user()->name }} <span class="caret"></span>
-                      </a>
-                      <ul class="dropdown-menu" role="menu">
-                          <li>
-                              <a href="{{ route('logout') }}"
-                                  onclick="event.preventDefault();
-                                           document.getElementById('logout-form').submit();">
-                                  Logout
-                              </a>
+<body>
+<div class="slider">
+		<div id="about-slider">
+			<div id="carousel-slider" class="carousel slide" data-ride="carousel">
+				<!-- Indicators -->
+				<ol class="carousel-indicators visible-xs">
+					<li data-target="#carousel-slider" data-slide-to="0" class="active"></li>
+					<li data-target="#carousel-slider" data-slide-to="1"></li>
+					<li data-target="#carousel-slider" data-slide-to="2"></li>
+				</ol>
 
-                              <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                  {{ csrf_field() }}
-                              </form>
-                          </li>
-                      </ul>
-                  </li>
-              @endif
-          </ul>
-      </div>
+				<div class="carousel-inner">
+					<div class="item active">
+						<img src="img/1.jpg" class="img-responsive" alt="">
+						<div class="carousel-caption">
+							<div class="wow fadeInUp" data-wow-offset="0" data-wow-delay="0.3s">
+								<h2><span>RR - Computer</span></h2>
+							</div>
+							<div class="col-md-10 col-md-offset-1">
+								<div class="wow fadeInUp" data-wow-offset="0" data-wow-delay="0.6s">
+									<p>La computadora indicada para la persona indicada</p>
+								</div>
+							</div>
+						</div>
+				    </div>
+
+				    <div class="item">
+						<img src="img/2.jpg" class="img-responsive" alt="">
+						<div class="carousel-caption">
+							<div class="wow fadeInUp" data-wow-offset="0" data-wow-delay="1.0s">
+								<h2>Calidad y Satisfaccion</h2>
+							</div>
+							<div class="col-md-10 col-md-offset-1">
+								<div class="wow fadeInUp" data-wow-offset="0" data-wow-delay="0.6s">
+									<p>En cliente contento es un objetivo cumplido par ala empresa</p>
+								</div>
+							</div>
+						</div>
+				    </div>
+				</div>
+
+				<a class="left carousel-control hidden-xs" href="#carousel-slider" data-slide="prev">
+					<i class="fa fa-angle-left"></i>
+				</a>
+
+				<a class=" right carousel-control hidden-xs"href="#carousel-slider" data-slide="next">
+					<i class="fa fa-angle-right"></i>
+				</a>
+			</div> <!--/#carousel-slider-->
+		</div><!--/#about-slider-->
+	</div><!--/#slider-->
+
+	<!-- spacer section:testimonial -->
+		<section id="testimonials-3" class="section" data-stellar-background-ratio="0.5">
+		<div class="container">
+			<div class="row">
+					<div class="col-lg-12">
+							<div class="align-center">
+										<div class="testimonial pad-top40 pad-bot40 clearfix">
+											<h5>
+												"Es genial trabajar con ordenadores. No discuten, lo recuerdan todo y no se beben tu cerveza"
+
+											</h5>
+											<br/>
+											<span class="author">&mdash; -- Paul Leary </span>
+										</div>
+
+								</div>
+							</div>
+					</div>
+
+			</div>
+
+		</section>
+
+		<!-- services -->
+		<section id="services" class="section pad-bot5 bg-white">
+		<div class="container">
+				<div class="row mar-bot5">
+					<div class="col-md-offset-3 col-md-6">
+						<div class="section-header">
+						<div class="wow bounceIn"data-animation-delay="7.8s">
+
+							<h2 class="section-heading animated"  >Nuestro Servicio</h2>
+							<h4>Empresa Nº1 en la la venta de computadoras personalizadas para su talla.</h4>
+
+						</div>
+						</div>
+					</div>
+				</div>
+			<div class="row mar-bot40">
+				<div class="col-lg-4" >
+					<div class="wow bounceIn">
+						<div class="align-center">
+
+							<div class="wow rotateIn">
+								<div class="service-col">
+									<div class="service-icon">
+										<figure><i class="fa fa-cog"></i></figure>
+									</div>
+										<h2><a href="#">Asistencia las 24Hs del día</a></h2>
+										<p>Garantia de 4 años. Posibilidad de cambiar productos dentro de un plazo estipulado de 1 semana. Asistencia telefonica continua.</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-lg-4" >
+					<div class="align-center">
+						<div class="wow bounceIn">
+
+							<div class="wow rotateIn">
+								<div class="service-col">
+									<div class="service-icon">
+										<figure><i class="fa fa-desktop"></i></figure>
+									</div>
+										<h2><a href="#">Alta Calidad de Producto</a></h2>
+										<p>Contamos con los mejores productos del mundo fabricados en nuestro propio país que cumplen con todos los estandares de calidad.</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-lg-4" >
+					<div class="align-center">
+						<div class="wow bounceIn">
+							<div class="service-col">
+								<div class="service-icon">
+									<figure><i class="fa fa-dropbox"></i></figure>
+								</div>
+									<h2><a href="#">Envio Puerta a Puerta</a></h2>
+									<p>Contamos con envio a todo el pais las 24 hs los 365 días del año sin importarl el lugar donde esté. No se le aplican cargos adicionales.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+
+			</div>
+
+		</div>
+		</section>
+		<!--/services-->
+
+		<!-- spacer section:testimonial --
+
+		<!-- team -->
+		<section id="team" class="team-section appear clearfix">
+		<div class="container">
+
+				<div class="row mar-bot10">
+					<div class="col-md-offset-3 col-md-6">
+						<div class="section-header">
+						<div class="wow bounceIn">
+
+							<h2 class="section-heading animated" data-animation="bounceInUp">Nuestro Equipo</h2>
+							<p>Grandes profesionales con una vision distinta de como satisfacer las necesidades de las personas.</p>
+
+						</div>
+						</div>
+					</div>
+				</div>
+
+					<div class="row align-center mar-bot45">
+						<div class="col-md-6">
+
+							<div class="wow bounceIn">
+							<div class="team-member">
+								<div class="profile-picture">
+									<figure><img src="img/members1.jpg" alt=""></figure>
+									<div class="profile-overlay"></div>
+										<div class="profile-social">
+											<div class="icons-wrapper">
+												<a href="#"><i class="fa fa-facebook"></i></a>
+												<a href="#"><i class="fa fa-twitter"></i></a>
+												<a href="#"><i class="fa fa-linkedin"></i></a>
+												<a href="#"><i class="fa fa-pinterest"></i></a>
+												<a href="#"><i class="fa fa-google-plus"></i></a>
+											</div>
+										</div>
+								</div>
+								<div class="team-detail">
+									<h4>Manuel Rios</h4>
+									<span>CEO - RR Computer</span>
+								</div>
+								<div class="team-bio">
+								<p>Es un empresario, informático y filántropo argentino, cofundador de la empresa RR Computers.Su fortuna está estimada en 86.900 millones de dólares según la revista Forbes.</p>
+								</div>
+							</div>
+							</div>
+						</div>
+						<div class="col-md-6">
+							<div class="wow bounceIn">
+							<div class="team-member">
+								<div class="profile-picture">
+									<figure><img src="img/members2.jpg" alt=""></figure>
+									<div class="profile-overlay"></div>
+										<div class="profile-social">
+											<div class="icons-wrapper">
+												<a href="#"><i class="fa fa-facebook"></i></a>
+												<a href="#"><i class="fa fa-twitter"></i></a>
+												<a href="#"><i class="fa fa-linkedin"></i></a>
+												<a href="#"><i class="fa fa-pinterest"></i></a>
+												<a href="#"><i class="fa fa-google-plus"></i></a>
+											</div>
+										</div>
+								</div>
+								<div class="team-detail">
+									<h4>Conztanza Morillo</h4>
+									<span>CEO - RR Computer</span>
+								</div>
+								<div class="team-bio">
+								<p>Es una empresaria y filántropa argentina. Se graduó en Informática y Economía por la Universidad de Duke. Forma parte del directorio del diario The Washington Post.</p>
+								</div>
+							</div>
+							</div>
+						</div>
+
+					</div>
+
+		</div>
+		</section>
+		<!-- /team -->
+
+		<!-- spacer section:stats -->
+
+
+		<!-- spacer section:testimonial -->
+		<section id="testimonials-2" class="section" data-stellar-background-ratio="0.5">
+		<div class="container">
+			<div class="row">
+					<div class="col-lg-12">
+							<div class="align-center">
+										<div class="testimonial pad-top40 pad-bot40 clearfix">
+											<h5>
+												"Hay sólo dos clases de lenguajes de programación: aquellos de los que la gente está siempre quejándose y aquellos que nadie usa"
+
+											</h5>
+											<br/>
+											<span class="author">-- Bjarne Stroustrup</span>
+										</div>
+
+								</div>
+							</div>
+					</div>
+
+			</div>
+
+		</section>
+
+		<!-- contact -->
+		<section id="section-contact" class="section appear clearfix">
+			<div class="container">
+
+				<div class="row mar-bot40">
+					<div class="col-md-offset-3 col-md-6">
+						<div class="section-header">
+							<h2 class="section-heading animated" data-animation="bounceInUp">Contactanos!</h2>
+							<p>Cualquier duda o consulta que quieras hacernos estamos acà para escucharte.</p>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-8 col-md-offset-2">
+                        <div id="sendmessage">Su mensaje fue enviado!. Muchas Gracias!</div>
+                        <div id="errormessage"></div>
+                        <form action="" method="post" role="form" class="contactForm">
+                            <div class="form-group">
+                                <input type="text" name="name" class="form-control" id="name" placeholder="Nombre" data-rule="minlen:4" data-msg="Por favor ingrese al menos 4 caracteres" />
+                                <div class="validation"></div>
+                            </div>
+                            <div class="form-group">
+                                <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" data-rule="email" data-msg="Por favor ingrese un mail valido" />
+                                <div class="validation"></div>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class="form-control" name="subject" id="subject" placeholder="Motivo" data-rule="minlen:4" data-msg="Por favor ingrese al menos 8 caracteres en el Motivo" />
+                                <div class="validation"></div>
+                            </div>
+                            <div class="form-group">
+                                <textarea class="form-control" name="message" rows="5" data-rule="required" data-msg="Please write something for us" placeholder="Mensaje"></textarea>
+                                <div class="validation"></div>
+                            </div>
+
+                            <div class="text-center"><button type="submit" class="line-btn green">Enviar Mensaje</button></div>
+                        </form>
+					</div>
+					<!-- ./span12 -->
+				</div>
+
+			</div>
+		</section>
+		<!-- map -->
+		<section id="section-map" class="clearfix">
+			<div id="google-map" data-latitude="-38.719235" data-longitude="-62.265053"></div>
+		</section>
+
+		  <section id="footer" class="section footer">
         <div class="container">
-            <div class="row well">
-
-                <!-- Lugar donde va la imagen que describe el producto -->
-                <div class="col-md-7 col-xs-12">
-                    <a class="thumbnail col-xs-12" id="panelgeneral">
-                        <div>
-                            <img id="imagen0" src="src/pregunta.png" />
-                            <img id="imagen3" src="src/pregunta1.png" />
-                        </div>
-                        <div>
-                            <img id="imagen1" src="src/pregunta1.png" />
-                            <img id="imagen2" src="src/pregunta1.png" />
-                        </div>
-                        <div id = "preciototal"></div>
-                    </a>
+            <div class="row animated opacity mar-bot0" data-andown="fadeIn" data-animation="animation">
+                <div class="col-sm-12 align-center">
+                    <ul class="social-network social-circle">
+                        <li><a href="#" class="icoRss" title="Rss"><i class="fa fa-rss"></i></a></li>
+                        <li><a href="#" class="icoFacebook" title="Facebook"><i class="fa fa-facebook"></i></a></li>
+                        <li><a href="#" class="icoTwitter" title="Twitter"><i class="fa fa-twitter"></i></a></li>
+                        <li><a href="#" class="icoGoogle" title="Google +"><i class="fa fa-google-plus"></i></a></li>
+                        <li><a href="#" class="icoLinkedin" title="Linkedin"><i class="fa fa-linkedin"></i></a></li>
+                    </ul>
                 </div>
+            </div>
 
-                <!-- Lugar donde van los componentes para personalizar el producto -->
-                <div class="col-md-5 col-xs-12">
-                    <div class="panel-group">
-                        <div class="panel panel-default">
-                            <div class="panel-heading" id = "monitor">
-                                <h4 class="panel-title">
-                                    <a data-toggle="collapse" href="#collapse0">Monitor</a>
-                                </h4>
-                            </div>
-                            <div id="collapse0" class="panel-collapse collapse">
-                            </div>
-                            <div class="panel-heading" id ="teclado">
-                                <h4 class="panel-title">
-                                    <a data-toggle="collapse" href="#collapse1">Teclado</a>
-                                </h4>
-                            </div>
-                            <div id="collapse1" class="panel-collapse collapse">
-                            </div>
-                            <div class="panel-heading" id ="mouse">
-                         <!--      <img src ="src/mousemicro.png" align = "right"/> -->
-                                <h4 class="panel-title">
-                                    <a data-toggle="collapse" href="#collapse2">Mouse</a>
-                                </h4>
-                            </div>
-                            <div id="collapse2" class="panel-collapse collapse">
-                            </div>
-                            <div class="panel-heading" id ="parlantes">
-                                <h4 class="panel-title">
-                                    <a data-toggle="collapse" href="#collapse3">Parlantes</a>
-                                </h4>
-                            </div>
-                            <div id="collapse3" class="panel-collapse collapse">
-                            </div>
+            <div class="row align-center copyright">
+                    <div class="col-sm-12">
+                        <p>&copy; GREEN Theme</p>
+                        <div class="credits">
+                            <!--
+                                All the links in the footer should remain intact.
+                                You can delete the links only if you purchased the pro version.
+                                Licensing information: https://bootstrapmade.com/license/
+                                Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=Green
+                            -->
+                            <a href="https://bootstrapmade.com/">Bootstrap Themes</a> by <a href="https://bootstrapmade.com/">BootstrapMade</a>
                         </div>
                     </div>
-                </div>
             </div>
         </div>
-        <footer class="footer">
-            <div class="container">
-                <div class="row">
-                    <!-- Contact us form -->
-                    <div class="col-md-4 col-xs-12">
-                        <div class="headline">
-                            <h3>CONTACT US</h3>
-                        </div>
-                        <hr />
-                        <div class="content">
-                            <p>
-                                Bahía Blanca, CP 8000<br />
-                                Av. Alem 1253<br />
-                                Phone: +54 702 101924<br />
-                                Fax: +54 702 103003<br />
-                                Email: com702@iaw2017.com
-                            </p>
-                        </div>
-                    </div>
-                    <!-- Go social -->
-                    <div class="col-md-4 col-xs-12">
-                        <div class="headline">
-                            <h3>GO SOCIAL</h3>
-                        </div>
-                        <hr />
-                        <div class="content">
-                            <p>
-                                Get in toach with us:
-                                <a class="texto-link" href ="http://cs.uns.edu.ar/~dcm/iaw/">http://cs.uns.edu.ar/~dcm/iaw/ </a>
-                            </p>
-                            <p>
-                                <a href="https://www.facebook.com/manuel.rios.374"><img src="src/facebook.png" alt="Logo Facebook" /></a>
-                                Manuel Rios
-                            </p>
-                            <p>
-                                <a href="https://www.facebook.com/Constanza.morillo"><img src="src/facebook.png" alt="Logo Facebook" /></a>
-                                Constanza Morillo
-                            </p>
+    </section>
 
-                        </div>
-                    </div>
-                    <!-- Subscibe -->
-                    <div class="col-md-4 col-xs-12">
-                        <div class="headline">
-                            <h3>CAMBIA TU ESTILO</h3>
-                        </div>
-                        <hr />
-                        <div class="content">
-                            <p>
-                                <a class="texto-link" href="#" id="estilo1" >Estilo 1 </a>
-                            </p>
-                            <p>
-                                <a class="texto-link" href="#" id="estilo2" >Estilo 2 </a>
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </footer>
-
-        <!-- jQuery (necessary for Bootstrap's JavaScript plugins)-->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-        <script type="text/javascript" src="js/jquery-1.11.0.min.js"></script>
-        <script type="text/javascript" src="js/vistaComponentes.js"></script>
-        <script type="text/javascript" src="js/controlador.js"></script>
-        <script type="text/javascript" src="js/carrito.js"></script>
-        <script src="js/bootstrap.min.js"></script>
-
-    </body>
+</body>
 </html>

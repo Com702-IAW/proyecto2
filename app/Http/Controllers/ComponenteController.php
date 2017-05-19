@@ -12,12 +12,12 @@ use Redirect;
 class ComponenteController extends Controller
 {
     public function index(){
-        $monitores = Monitor::all();
-        $teclados = Teclado::all();
-        $mouses = Mouse::all();
+        //$monitores = Monitor::all();
+        //$teclados = Teclado::all();
+        //$mouses = Mouse::all();
         //agregar lo de parlantes y eso array($monitores,$parlantes,...)
-        $componentes = array($monitores,$teclados,$mouses);
-        return view('componentes.index',compact('componentes'));
+       // $componentes = array($monitores,$teclados,$mouses);
+        return view('componentes.index');
     }
 
     public function json(){
@@ -29,6 +29,13 @@ class ComponenteController extends Controller
       return $componentes;
     }
 
+    public function producto(){
+      return view('componentes.producto');
+    }
+
+    public function guardarBase(){
+      
+    }
     //metodo que reciba los datos y que grabe a la base de datos.
     //Laravel como recibir desde post requerimient.
 }
