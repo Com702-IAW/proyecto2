@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateMiceTable extends Migration
+class CreateParlantesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,12 @@ class CreateMiceTable extends Migration
      */
     public function up()
     {
-        Schema::create('mice', function (Blueprint $table) {  
-          $table->increments('id');
-          $table->string('marca');
-          $table->integer('precio');
-          $table->string('color');
-          $table->string('imagen');
+        Schema::create('parlantes', function (Blueprint $table) {
+            $table->increments('id');
+            $table->string('marca');
+            $table->integer('precio');
+            $table->string('color');
+            $table->string('imagen');
         });
     }
 
@@ -29,6 +29,6 @@ class CreateMiceTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('mice');
+        Schema::dropIfExists('parlantes');
     }
 }

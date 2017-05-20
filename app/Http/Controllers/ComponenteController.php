@@ -7,30 +7,25 @@ use App\Monitor;
 use App\Mouse;
 use App\Teclado;
 use Auth;
+use App\User;
+use App\Parlante;
+use App\Pedido;
 use Redirect;
 
 class ComponenteController extends Controller
 {
     public function index(){
-        //$monitores = Monitor::all();
-        //$teclados = Teclado::all();
-        //$mouses = Mouse::all();
-        //agregar lo de parlantes y eso array($monitores,$parlantes,...)
-       // $componentes = array($monitores,$teclados,$mouses);
-        return view('componentes.index');
+      return view('componentes.producto');
     }
 
     public function json(){
       $monitores = Monitor::all();
       $teclados = Teclado::all();
       $mouses = Mouse::all();
+      $parlantes = Parlante::all();
       //agregar lo de parlantes y eso array($monitores,$parlantes,...)
-      $componentes = array($monitores,$teclados,$mouses);
+      $componentes = array($monitores,$teclados,$mouses,$parlantes);
       return $componentes;
-    }
-
-    public function producto(){
-      return view('componentes.producto');
     }
 
     public function guardarBase(){

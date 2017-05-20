@@ -11,19 +11,23 @@
 |
 */
 
-Route::get('/', 'ComponenteController@index');
+Route::get('/', 'HomeController@index');
 
 Route::get('/componentes/json', 'ComponenteController@json');
 
 Auth::routes();
 
-Route::get('/producto','ComponenteController@producto')->name('producto');
+Route::get('/producto','ComponenteController@index')->name('producto');
 
 Route::get('/logout', 'Auth\LoginController@logout');
 
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::post('/panelAdmin', 'AdminController@index')->name('panelAdmin');
+
+Route::post('/panelPedidos', 'UsuarioController@index')->name('panelPedidos');
+
+Route::get('/panelAdmin', 'AdminController@index');
 
 Route::get('login/github', 'Auth\LoginController@redirectToProvider')->name('github');
 

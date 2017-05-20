@@ -14,11 +14,11 @@ class CreateTecladosTable extends Migration
     public function up()
     {
         Schema::create('teclados', function (Blueprint $table) {
+          $table->increments('id');
           $table->string('marca');
           $table->integer('precio');
           $table->string('color');
           $table->string('imagen');
-          $table->timestamps();
         });
     }
 

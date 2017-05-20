@@ -63,6 +63,18 @@
                                             {{ csrf_field() }}
                                         </form>
                                     </li>
+                                    @else
+                                    <li>
+                                        <a href="{{ route('panelPedidos') }}"
+                                            onclick="event.preventDefault();
+                                                     document.getElementById('pedidos-form').submit();">
+                                            Mis Pedidos
+                                        </a>
+
+                                        <form id="pedidos-form" action="{{ route('panelPedidos') }}" method="POST" style="display: none;">
+                                            {{ csrf_field() }}
+                                        </form>
+                                    </li>
                                     @endif
                                     <li>
                                         <a href="{{ route('logout') }}"

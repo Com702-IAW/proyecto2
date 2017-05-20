@@ -9,11 +9,11 @@
 </section>
 
 <section id="section-about">
-		<div class="container" >
+		<div class="container" style= "background:white">
 
-			<div class="container">
+			<div class="container" style= "background:white">
 
-            <div class="row well" >
+            <div class="row well" style= "background:white" >
                 <!-- Lugar donde va la imagen que describe el producto -->
                 <div class="col-md-7 col-xs-12">
                     <a class="thumbnail col-xs-12" id="panelgeneral">
@@ -25,7 +25,7 @@
                             <img id="imagen1" src="src/pregunta1.png" />
                             <img id="imagen2" src="src/pregunta1.png" />
                         </div>
-                        <div id = "preciototal"> </div>
+                        <div id = "preciototal"> El precio total es: $0 </div>
                     </a>
                 </div>
 

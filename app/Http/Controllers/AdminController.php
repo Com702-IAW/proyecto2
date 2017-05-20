@@ -8,14 +8,12 @@ use Auth;
 class AdminController extends Controller
 {
       public function index(){
-        if (Auth::guest()){
-          return view('componentes.index');
-        }
+        if (Auth::guest())
+          return redirect('home');
         else
           if(Auth::user()->isAdmin())
                 return view ('componentes.panelAdmin');
           else
-              return view ('componentes.index');
-
+            return redirect('home');
       }
 }

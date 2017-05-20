@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateMonitorsTable extends Migration
+class CreatePedidosTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,13 @@ class CreateMonitorsTable extends Migration
      */
     public function up()
     {
-        Schema::create('monitors', function (Blueprint $table) {
+        Schema::create('pedidos', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('marca');
-            $table->integer('precio');
-            $table->string('color');
-            $table->string('imagen');
+            $table->integer('user_id');
+            $table->integer('monitor_id')->unsigned();
+            $table->integer('teclado_id')->unsigned();
+            $table->integer('mouse_id')->unsigned();
+            $table->integer('parlante_id')->unsigned();
         });
     }
 
@@ -29,6 +30,6 @@ class CreateMonitorsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('monitors');
+        Schema::dropIfExists('pedidos');
     }
 }

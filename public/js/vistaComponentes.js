@@ -22,6 +22,9 @@ function agregarComponente(componente,indice) {
     var div = $("<div></div>").attr("class", "panel-body");
     var imagen = $("<img></img>").attr("src", componente.imagen);
     imagen.attr("align", "right");
+    var opcion = $("<option></option>").attr("value",componente.id);
+    opcion.text("Pedido N°: "+componente.marca);
+    $("#pedidos").append(opcion);
     div.append(imagen);
     div.append(primerTex);
     div.append(segundoTex);
@@ -30,7 +33,7 @@ function agregarComponente(componente,indice) {
     var botonB = $("<button></button>").text("Borrar del carrito");
     boton.attr("id", indice);
     boton.click(function() {
-        actualizarPedido(componente);
+        eliminarItem(componente);
     });
     boton.attr("id", indice);
     botonB.click(function() {

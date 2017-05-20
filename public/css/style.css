@@ -16,8 +16,16 @@
 /*==========================================================================
   General
   ========================================================================== */
-  
+#monitor,#teclado,#mouse,#parlantes{
+  background: white;
+  border-color: green;
+}
 
+#preciototal{
+  font-size: 20px;
+  text-align: center;
+  font-style: italic;
+}
 /*Monitor*/
 #imagen0{
     width: 266px;

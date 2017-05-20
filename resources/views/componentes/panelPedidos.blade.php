@@ -1,4 +1,4 @@
-@extends('layouts.app6')
+@extends('layouts.app7')
 
 <!DOCTYPE html>
 <html class="no-js"> <!--<![endif]-->
@@ -7,40 +7,40 @@
 <section id="testimonials-4" class="section" data-stellar-background-ratio="0.5">
 </section>
 
-<section id="section-agregar" class="section" data-stellar-background-ratio="0.5">
-    <form class="form-horizontal" role="form" method="POST" action="{{ route('login') }}">
-        <div class="col-md-6">
-            <label for="email" class="col-md-4 control-label">Componente</label>
-            <input id="email" type="email" class="form-control" name="email">
-        </div>
+<section id="section-about">
+    <div class="container" style= "background:white">
 
-        <div class="form-group">
-            <div class="col-md-8 col-md-offset-4">
-                <button type="submit" class="btn btn-primary">
-                    Agregar Componente
-                </button>
+        <div class="container" style= "background:white">
+
+            <div class="row well" style= "background:white">
+
+                <div class="col-md-7 col-xs-12">
+                    <a class="thumbnail col-xs-12" id="panelgeneral">
+                        <div>
+                            <img id="imagen0" src="src/pregunta.png" />
+                            <img id="imagen3" src="src/pregunta1.png" />
+                        </div>
+                        <div>
+                            <img id="imagen1" src="src/pregunta1.png" />
+                            <img id="imagen2" src="src/pregunta1.png" />
+                        </div>
+                        <div id = "preciototal"> </div>
+                    </a>
+                </div>
+
+                <div class="col-md-5 col-xs-12" style="text-align:center">
+                    <h1>Mis pedidos</h1>
+
+                    <select id = "pedidos">
+                        
+                    </select> 
+
+                </div>
             </div>
         </div>
-    </form>
+    </div>
+
 </section>
-
-<section id="section-eliminar" class="section" data-stellar-background-ratio="0.5">
-    <form class="form-horizontal" role="form" method="POST" action="{{ route('login') }}">
-
-        <div class="col-md-6">
-            <label for="email" class="col-md-4 control-label">Componente</label>
-            <input id="email" type="email" class="form-control" name="email">
-        </div>
-
-        <div class="form-group">
-            <div class="col-md-8 col-md-offset-4">
-                <button type="submit" class="btn btn-primary">
-                    Eliminar Componente
-                </button>
-            </div>
-        </div>
-    </form>
- </section>
 
     <section id="footer" class="section footer">
         <div class="container">
@@ -72,4 +72,8 @@
             </div>
         </div>
     </section>
+     <script type="text/javascript" src="js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="js/vistaComponentes.js"></script>
+    <script type="text/javascript" src="js/controlador.js"></script>
+    <script type="text/javascript" src="js/carrito.js"></script>
 </body>

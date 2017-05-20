@@ -37,7 +37,7 @@
 							</div>
 							<div class="col-md-10 col-md-offset-1">
 								<div class="wow fadeInUp" data-wow-offset="0" data-wow-delay="0.6s">
-									<p>En cliente contento es un objetivo cumplido par ala empresa</p>
+									<p>En cliente contento es un objetivo cumplido para la empresa</p>
 								</div>
 							</div>
 						</div>
@@ -54,29 +54,6 @@
 			</div> <!--/#carousel-slider-->
 		</div><!--/#about-slider-->
 	</div><!--/#slider-->
-
-	<!-- spacer section:testimonial -->
-		<section id="testimonials-3" class="section" data-stellar-background-ratio="0.5">
-		<div class="container">
-			<div class="row">
-					<div class="col-lg-12">
-							<div class="align-center">
-										<div class="testimonial pad-top40 pad-bot40 clearfix">
-											<h5>
-												"Es genial trabajar con ordenadores. No discuten, lo recuerdan todo y no se beben tu cerveza"
-
-											</h5>
-											<br/>
-											<span class="author">&mdash; -- Paul Leary </span>
-										</div>
-
-								</div>
-							</div>
-					</div>
-
-			</div>
-
-		</section>
 
 		<!-- services -->
 		<section id="services" class="section pad-bot5 bg-white">
@@ -145,6 +122,28 @@
 			</div>
 
 		</div>
+		</section>
+
+		<section id="testimonials-3" class="section" data-stellar-background-ratio="0.5">
+		<div class="container">
+			<div class="row">
+					<div class="col-lg-12">
+							<div class="align-center">
+										<div class="testimonial pad-top40 pad-bot40 clearfix">
+											<h5>
+												"Es genial trabajar con ordenadores. No discuten, lo recuerdan todo y no se beben tu cerveza"
+
+											</h5>
+											<br/>
+											<span class="author">&mdash; -- Paul Leary </span>
+										</div>
+
+								</div>
+							</div>
+					</div>
+
+			</div>
+
 		</section>
 		<!--/services-->
 

@@ -25,6 +25,18 @@ class MonitoresSeeder extends Seeder
             'precio' => 2000,
             'color' => 'Blanco',
             'imagen' => 'src/monitor1.png'
+          ],
+          [
+            'marca' => 'Acer',
+            'precio' => 3000,
+            'color' => 'Negro',
+            'imagen' => 'src/monitor2.png'
+          ],
+          [
+            'marca' => 'Mac',
+            'precio' => 5000,
+            'color' => 'Blanco',
+            'imagen' => 'src/monitor3.png'
           ]
         ]);
     }

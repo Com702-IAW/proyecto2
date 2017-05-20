@@ -15,5 +15,6 @@ class DatabaseSeeder extends Seeder
          $this->call(TecladosSeeder::class);
          $this->call(MousesSeeder::class);
          $this->call(AdminSeeder::class);
+         $this->call(ParlantesSeeder::class);
     }
 }
