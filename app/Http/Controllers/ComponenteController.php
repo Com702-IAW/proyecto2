@@ -11,6 +11,7 @@ use App\User;
 use App\Parlante;
 use App\Pedido;
 use Redirect;
+use App\AdminController;
 
 class ComponenteController extends Controller
 {
@@ -28,9 +29,6 @@ class ComponenteController extends Controller
       return $componentes;
     }
 
-    public function guardarBase(){
-      
-    }
-    //metodo que reciba los datos y que grabe a la base de datos.
-    //Laravel como recibir desde post requerimient.
+  
+    
 }

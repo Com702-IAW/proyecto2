@@ -33,7 +33,7 @@ function agregarComponente(componente,indice) {
     var botonB = $("<button></button>").text("Borrar del carrito");
     boton.attr("id", indice);
     boton.click(function() {
-        eliminarItem(componente);
+        actualizarPedido(componente);
     });
     boton.attr("id", indice);
     botonB.click(function() {

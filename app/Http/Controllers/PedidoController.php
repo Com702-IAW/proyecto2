@@ -7,13 +7,17 @@ use Illuminate\Http\Request;
 class PedidoController extends Controller
 {
 	public function index(){
+        if (Auth::guest())
+          return redirect('home');
+        else
+            return view ('componentes.panelPedidos');
+   }
 
-		$userid = Auth::user()->getId();
-        $pedidos = Pedido::where('user_id',$userid)->get();    
-        foreach ($pedidos as $pedido)
-            echo $pedido->mouse_id;
-      
-      return view('componentes.pedidos');
-    }
+   public function store(){
+   	if (Request::ajax()){
+   		$data = Input::all();
+   		echo $data;
+   	}
+   }
 
 }

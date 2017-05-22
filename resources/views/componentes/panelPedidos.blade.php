@@ -29,13 +29,15 @@
                 </div>
 
                 <div class="col-md-5 col-xs-12" style="text-align:center">
+
                     <h1>Mis pedidos</h1>
-
                     <select id = "pedidos">
-                        
-                    </select> 
 
+                    </select>
+
+                    <button type="button">Generar Comprobante</button> 
                 </div>
+
             </div>
         </div>
     </div>

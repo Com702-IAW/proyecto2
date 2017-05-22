@@ -34,7 +34,6 @@
                     <h1><a class="navbar-brand" href="index.html" data-0="line-height:90px;" data-300"line-height:50px;">RR Computer
                     </a></h1>
 
-
                 </div>
                 <div class="navbar-collapse collapse">
 
@@ -45,6 +44,9 @@
                             <li><a href="{{ route('login') }}">Login</a></li>
                             <li><a href="{{ route('register') }}">Register</a></li>
                         @else
+                            @if (!Auth::user()->isadmin())
+                                <li><a  href="#section-about" id = "guardarPedido" >Guardar Pedido </a></li>
+                            @endif
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
                                     {{ Auth::user()->name }} <span class="caret"></span>

@@ -23,11 +23,13 @@ Route::get('/logout', 'Auth\LoginController@logout');
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::post('/panelAdmin', 'AdminController@index')->name('panelAdmin');
+Route::any('/panelAdmin', 'AdminController@index')->name('panelAdmin');
 
-Route::post('/panelPedidos', 'UsuarioController@index')->name('panelPedidos');
+Route::any('panelAdmin/store', 'AdminController@store');
 
-Route::get('/panelAdmin', 'AdminController@index');
+Route::any('/producto/store', 'PedidoController@store')->name('guardarPedido');
+
+Route::post('/panelPedidos', 'PedidoController@index')->name('panelPedidos');
 
 Route::get('login/github', 'Auth\LoginController@redirectToProvider')->name('github');
 
@@ -36,3 +38,5 @@ Route::get('login/github/callback', 'Auth\LoginController@handleProviderCallback
 Route::get('/redirect', 'SocialAuthController@redirect');
 
 Route::get('/callback', 'SocialAuthController@callback');
+
+Route::get('/pdf', 'PdfController@invoice');

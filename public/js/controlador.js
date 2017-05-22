@@ -45,8 +45,21 @@ $(document).ready(function(){
 		$("#imagen1").attr("src","src/pregunta1.png");
 		$("#imagen2").attr("src","src/pregunta1.png");
 		$("#imagen3").attr("src","src/pregunta1.png");
-        $("#preciototal").text("El precio total es: $" + total);
+        $("#preciototal").text("El precio total es: $0");
 	})
+});
+
+$(document).ready(function(){
+    $("#guardarPedido").click(function (){
+        $.ajax({
+            url: 'producto/store',
+            type: "post",
+            data: {jsonCarrito},
+            success: function(){
+            alert("Pedido Guardado");
+        }
+        })
+    })
 });
 
 $(document).ready(function () {
