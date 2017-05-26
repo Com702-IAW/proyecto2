@@ -14,7 +14,6 @@ class PedidoController extends Controller
         if (Auth::guest())
           return redirect('home');
         else
-<<<<<<< HEAD
             return view('componentes.panelPedidos');
    }
 
@@ -38,16 +37,5 @@ class PedidoController extends Controller
     // si existe, devolver una view con la instancia encontrada
     // si no existe, hacer otra cosa (redirect o mostrar pagina de error)
   }
-=======
-            return view ('componentes.panelPedidos');
-   }
-
-   public function store(){
-   	if (Request::ajax()){
-   		$data = Input::all();
-   		echo $data;
-   	}
-   }
->>>>>>> 04c3040d69e6eff0c9ca1feda58e2085b03908fe
 
 }

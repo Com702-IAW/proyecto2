@@ -12,10 +12,7 @@ use App\Parlante;
 use App\Pedido;
 use Redirect;
 use App\AdminController;
-<<<<<<< HEAD
 use DB;
-=======
->>>>>>> 04c3040d69e6eff0c9ca1feda58e2085b03908fe
 
 class ComponenteController extends Controller
 {
@@ -33,7 +30,6 @@ class ComponenteController extends Controller
       return $componentes;
     }
 
-<<<<<<< HEAD
     public function store(Request $request){
 
        if($request->isMethod('post')){
@@ -68,8 +64,6 @@ class ComponenteController extends Controller
        return redirect('home');
       }
 
-=======
->>>>>>> 04c3040d69e6eff0c9ca1feda58e2085b03908fe
   
     
 }

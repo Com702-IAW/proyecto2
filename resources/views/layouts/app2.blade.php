@@ -47,13 +47,9 @@
                             <li><a href="{{ route('register') }}">Register</a></li>
                         @else
                             @if (!Auth::user()->isadmin())
-<<<<<<< HEAD
                                 <li><a  href="#section-about" id = "guardarPedido" >Guardar Pedido </a>
                                     {{ csrf_field() }}
                                 </li>
-=======
-                                <li><a  href="#section-about" id = "guardarPedido" >Guardar Pedido </a></li>
->>>>>>> 04c3040d69e6eff0c9ca1feda58e2085b03908fe
                             @endif
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">

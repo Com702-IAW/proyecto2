@@ -18,13 +18,7 @@
 
                     <ul class="nav navbar-nav" data-0="margin-top:20px;" data-300="margin-top:5px;">
                         <li><a href="{{route('home')}}">Home</a></li>
-                        @if(Auth::guest())
-                            <li><a href="{{route('producto')}}">Comprar ahora</a></li>
-                        @else
-                            @if(!Auth::user()->isadmin())
-                                <li><a href="{{route('producto')}}">Comprar ahora</a></li>
-                            @endif
-                        @endif
+                        <li><a href="{{route('producto')}}">Comprar ahora</a></li>
                         <li><a href="#services">Servicio</a></li>
                         <li><a href="#team">Equipo</a></li>
                          @if (Auth::guest())

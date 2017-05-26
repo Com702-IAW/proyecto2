@@ -22,7 +22,7 @@ class LoginController extends Controller
       $logueado = true;
       if (Auth::guest()){
           $logueado = false;
-          return view('Auth\login')->with('logueado',$logueado);
+          return view('Auth.login')->with('logueado',$logueado);
       }
       else
        return redirect('home');
@@ -47,7 +47,7 @@ class LoginController extends Controller
     }
 }
 
-/*
+
 
   public function redirectToProvider(){
       return Socialite::driver('github')->redirect();
@@ -71,4 +71,4 @@ class LoginController extends Controller
        auth()->login($user);
        return redirect()->to('/home');
    }
-}*/
+}

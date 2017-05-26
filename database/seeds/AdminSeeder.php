@@ -12,14 +12,19 @@ class AdminSeeder extends Seeder
     public function run()
     {
       DB::table('users')->delete();
-      DB::table('users')->insert([
-        [
-          'name' => 'Constanza Morillo',
-          'email' => 'constanzamorillo1@gmail.com',
-          'password' => '$2y$10$sZ69LIOh2iP64ERUB/QZqukODkkCBjmbf5cqDIGLJhkyj4ouExmyi',
-          'admin' => 1,
-        ]
-      ]
-      );
+
+      User::create([
+            'name' => 'Constanza Morillo',
+            'email' => 'constanzamorillo1@gmail.com',
+            'password' => '$2y$10$sZ69LIOh2iP64ERUB/QZqukODkkCBjmbf5cqDIGLJhkyj4ouExmyi',
+            'admin' => 1
+        ]);
+
+      User::create([
+            'name' => 'Constanza Morillo',
+            'email' => 'constanzamorillo1@gmail.com',
+            'password' => '$2y$10$sZ69LIOh2iP64ERUB/QZqukODkkCBjmbf5cqDIGLJhkyj4ouExmyi',
+            'admin' => 0
+        ])
     }
 }
