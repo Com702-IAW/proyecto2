@@ -1,4 +1,3 @@
-@extends('layouts.app3')
 
 <!DOCTYPE html>
 <html lang="en">

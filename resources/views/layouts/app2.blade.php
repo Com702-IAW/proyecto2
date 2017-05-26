@@ -3,6 +3,8 @@
     <head>
         <!-- BASICS -->
         <meta charset="utf-8">
+        <meta name="csrf-token" content="{{ csrf_token() }}">
+
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
         <title>RR Computer</title>
         <meta name="description" content="">
@@ -34,7 +36,6 @@
                     <h1><a class="navbar-brand" href="index.html" data-0="line-height:90px;" data-300"line-height:50px;">RR Computer
                     </a></h1>
 
-
                 </div>
                 <div class="navbar-collapse collapse">
 
@@ -45,6 +46,11 @@
                             <li><a href="{{ route('login') }}">Login</a></li>
                             <li><a href="{{ route('register') }}">Register</a></li>
                         @else
+                            @if (!Auth::user()->isadmin())
+                                <li><a  href="#section-about" id = "guardarPedido" >Guardar Pedido </a>
+                                    {{ csrf_field() }}
+                                </li>
+                            @endif
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
                                     {{ Auth::user()->name }} <span class="caret"></span>

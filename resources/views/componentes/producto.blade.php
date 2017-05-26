@@ -1,5 +1,5 @@
-@extends('layouts.app3')
 @extends('layouts.app2')
+@extends('layouts.app3')
 
 <!DOCTYPE html>
 <html class="no-js"> <!--<![endif]-->
@@ -18,14 +18,14 @@
                 <div class="col-md-7 col-xs-12">
                     <a class="thumbnail col-xs-12" id="panelgeneral">
                         <div>
-                            <img id="imagen0" src="src/pregunta.png" />
-                            <img id="imagen3" src="src/pregunta1.png" />
+                            <img id="imagen0" />
+                            <img id="imagen3" />
                         </div>
                         <div>
-                            <img id="imagen1" src="src/pregunta1.png" />
-                            <img id="imagen2" src="src/pregunta1.png" />
+                            <img id="imagen1"  />
+                            <img id="imagen2"  />
                         </div>
-                        <div id = "preciototal"> El precio total es: $0 </div>
+                        <div id = "preciototal">  </div>
                     </a>
                 </div>
 
@@ -65,6 +65,7 @@
                         </div>
                     </div>
                 </div>
+
             </div>
         </div>
 

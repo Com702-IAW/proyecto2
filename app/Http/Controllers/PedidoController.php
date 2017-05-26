@@ -3,17 +3,39 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Response;
+use Auth;
+use App\Pedido;
+use Webpatser\Uuid\Uuid;
 
 class PedidoController extends Controller
 {
 	public function index(){
+        if (Auth::guest())
+          return redirect('home');
+        else
+            return view('componentes.panelPedidos');
+   }
 
-		$userid = Auth::user()->getId();
-        $pedidos = Pedido::where('user_id',$userid)->get();    
-        foreach ($pedidos as $pedido)
-            echo $pedido->mouse_id;
-      
-      return view('componentes.pedidos');
-    }
+	public function store(Request $r){
+    
+      $p = new Pedido;
+      $p->user_id = Auth::user()->getId();
+      $p->monitor_id = $r->monitor_id;
+      $p->teclado_id  = $r->teclado_id;
+      $p->mouse_id = $r->mouse_id;
+      $p->parlante_id = $r->parlante_id;
+      $p->token = Uuid::generate();
+      $p->save();
+
+      return Response::json([ 'mensaje' => 'El pedido se guardo correctamente']);
+	}
+
+  public function compartido($id) {
+
+      // hacer un get en la base de datos, WHERE token = $id
+    // si existe, devolver una view con la instancia encontrada
+    // si no existe, hacer otra cosa (redirect o mostrar pagina de error)
+  }
 
 }

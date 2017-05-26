@@ -30,7 +30,7 @@ class LoginController extends Controller
 
     public function showLoginForm(){
       $logueado = true;
-      return view ('auth\login');
+      return view ('auth.login');
     }
 
     use AuthenticatesUsers;
@@ -42,6 +42,7 @@ class LoginController extends Controller
 
     public function logout(){
       Auth::logout();
+      
       return redirect('home');
     }
 }

@@ -1,41 +1,31 @@
 @extends('layouts.app7')
+@extends('layouts.app3')
+
 
 <!DOCTYPE html>
 <html class="no-js"> <!--<![endif]-->
- <body>
+<body>
 
 <section id="testimonials-4" class="section" data-stellar-background-ratio="0.5">
 </section>
 
 <section id="section-about">
+
+    <!--hacer modal-->
     <div class="container" style= "background:white">
 
         <div class="container" style= "background:white">
 
             <div class="row well" style= "background:white">
 
-                <div class="col-md-7 col-xs-12">
-                    <a class="thumbnail col-xs-12" id="panelgeneral">
-                        <div>
-                            <img id="imagen0" src="src/pregunta.png" />
-                            <img id="imagen3" src="src/pregunta1.png" />
-                        </div>
-                        <div>
-                            <img id="imagen1" src="src/pregunta1.png" />
-                            <img id="imagen2" src="src/pregunta1.png" />
-                        </div>
-                        <div id = "preciototal"> </div>
-                    </a>
-                </div>
-
                 <div class="col-md-5 col-xs-12" style="text-align:center">
+
                     <h1>Mis pedidos</h1>
-
-                    <select id = "pedidos">
-                        
-                    </select> 
-
+                    <table id="tabla">  <!--hacer un js onda controlador para cargar todos los pedidos-->
+                        <tr><th>Pedido</th></tr>
+                    </table>
                 </div>
+
             </div>
         </div>
     </div>

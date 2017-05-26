@@ -20,10 +20,9 @@ $(function () {
     var estilo = localStorage.getItem("Estilo");
     if (estilo !== null)
         $("#linkestilo").attr("href", estilo);
-    mostrarAnterior();
 
-  //  var arreglo = ordenarComponentes();
-  //  mostrar(arreglo);
+    //Si soy usuario registrado guardo en localstorage????
+    mostrarAnterior();
 });
 
 $(document).ready(function () {
@@ -41,12 +40,40 @@ $(document).ready(function(){
 		{	jsonCarrito[index] = null;
 			$("#imagen"+index).attr("src","");
 		}
-		$("#imagen0").attr("src","src/pregunta.png");
-		$("#imagen1").attr("src","src/pregunta1.png");
-		$("#imagen2").attr("src","src/pregunta1.png");
-		$("#imagen3").attr("src","src/pregunta1.png");
-        $("#preciototal").text("El precio total es: $" + total);
+		$("#imagen0").attr("src",);
+		$("#imagen1").attr("src",);
+		$("#imagen2").attr("src",);
+		$("#imagen3").attr("src",);
+        $("#preciototal").text("");
 	})
+});
+
+$(document).ready(function() {
+    $.ajaxSetup({
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        }
+    });
+
+    $("#guardarPedido").click(function(){
+        monitor = jsonCarrito[0].id2;
+        teclado = jsonCarrito[1].id2;
+        mouse =  jsonCarrito[2].id2;
+        parlante =  jsonCarrito[3].id2;
+        $.ajax({
+            type: "post",
+            url : '/producto/store',
+            data : { monitor_id: monitor,
+                     teclado_id: teclado,
+                     mouse_id: mouse,
+                     parlante_id: parlante
+                    },
+            datatype: "JSON",
+            success : function(data){
+                alert(data.mensaje);
+            }
+        });
+    });
 });
 
 $(document).ready(function () {
@@ -65,8 +92,7 @@ function ordenarComponentes(componentes) {
         for (index1 = 0; index1 < objet.length; ++index1) {
             var objeto = objet[index1];
             objeto.id = index;      //para ubicar en primer arreglo en json
-            objeto.id2 = index1;    //para ubicar en segund arreglo en json (dentro de tipo de componente)
-            objeto.id3 = cont;      //para ubicar en el arreglo nuevo creado con todos los componentes
+            objeto.id2 = index1+1;    //para ubicar en segund arreglo en json (dentro de tipo de componente)
             //        objeto.pedido = false;
             arreglo[cont] = objeto;
             ++cont;

@@ -1,4 +1,3 @@
-@extends('layouts.app3')
 
 <!DOCTYPE html>
 <html lang="en">
@@ -22,7 +21,6 @@
                         <li><a href="{{route('producto')}}">Comprar ahora</a></li>
                         <li><a href="#services">Servicio</a></li>
                         <li><a href="#team">Equipo</a></li>
-                        <li><a href="#section-contact">Contacto</a></li>
                          @if (Auth::guest())
                             <li><a href="{{ route('login') }}">Login</a></li>
                             <li><a href="{{ route('register') }}">Register</a></li>

@@ -32,7 +32,6 @@
     <script src="js/modernizr-2.6.2-respond-1.1.0.min.js"></script>
     <script src="js/jquery.js"></script>
     <script src="js/jquery.easing.1.3.js"></script>
-    <script src="https://maps.google.com/maps/api/js?sensor=true"></script>
     <script src="js/jquery.isotope.min.js"></script>
     <script src="js/jquery.nicescroll.min.js"></script>
     <script src="js/fancybox/jquery.fancybox.pack.js"></script>
@@ -43,7 +42,6 @@
     <script src="js/responsive-slider.js"></script>
     <script src="js/jquery.appear.js"></script>
     <script src="js/grid.js"></script>
-    <script src="js/main.js"></script>
     <script src="js/wow.min.js"></script>
     <script>wow = new WOW({}).init();</script>
 </body>

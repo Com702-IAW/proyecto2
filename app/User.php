@@ -40,4 +40,8 @@ class User extends Authenticatable
     public function getId(){
         return $this->id;
     }
+
+    public function pedidos(){
+        return $this->hasMany(Pedido::class);
+    }
 }
