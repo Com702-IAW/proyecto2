@@ -30,5 +30,43 @@ class AdminController extends Controller
             }
           else
             return redirect('home');
+<<<<<<< HEAD
       }     
+=======
+      }
+
+      public function store(Request $request){
+
+       if($request->isMethod('post')){
+
+        $tipo = "";
+        $tipo2 = $request->input('tipo');
+
+        switch ($tipo2) {
+          case "0":
+             $tipo = "monitors";
+            break;
+           case "1":
+             $tipo = "teclados";
+            break;
+          case "2":
+            $tipo = "mice";
+            break;
+          case "3":
+            $tipo = "parlantes";
+            break;
+        }
+
+        DB::table($tipo)->insert([
+          [
+            'marca' => $request->input('marca'),
+            'precio' => $request->input('precio'),
+            'color' => $request->input('color'),
+            'imagen' => $request->input('imagen')
+          ]]);   
+       }
+
+       return redirect('home');
+      }
+>>>>>>> 04c3040d69e6eff0c9ca1feda58e2085b03908fe
 }

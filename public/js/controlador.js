@@ -40,6 +40,7 @@ $(document).ready(function(){
 		{	jsonCarrito[index] = null;
 			$("#imagen"+index).attr("src","");
 		}
+<<<<<<< HEAD
 		$("#imagen0").attr("src",);
 		$("#imagen1").attr("src",);
 		$("#imagen2").attr("src",);
@@ -74,6 +75,27 @@ $(document).ready(function() {
             }
         });
     });
+=======
+		$("#imagen0").attr("src","src/pregunta.png");
+		$("#imagen1").attr("src","src/pregunta1.png");
+		$("#imagen2").attr("src","src/pregunta1.png");
+		$("#imagen3").attr("src","src/pregunta1.png");
+        $("#preciototal").text("El precio total es: $0");
+	})
+});
+
+$(document).ready(function(){
+    $("#guardarPedido").click(function (){
+        $.ajax({
+            url: 'producto/store',
+            type: "post",
+            data: {jsonCarrito},
+            success: function(){
+            alert("Pedido Guardado");
+        }
+        })
+    })
+>>>>>>> 04c3040d69e6eff0c9ca1feda58e2085b03908fe
 });
 
 $(document).ready(function () {

@@ -19,11 +19,21 @@
             <div class="row well" style= "background:white">
 
                 <div class="col-md-5 col-xs-12" style="text-align:center">
+<<<<<<< HEAD
 
                     <h1>Mis pedidos</h1>
                     <table id="tabla">  <!--hacer un js onda controlador para cargar todos los pedidos-->
                         <tr><th>Pedido</th></tr>
                     </table>
+=======
+
+                    <h1>Mis pedidos</h1>
+                    <select id = "pedidos">
+
+                    </select>
+
+                    <button type="button">Generar Comprobante</button> 
+>>>>>>> 04c3040d69e6eff0c9ca1feda58e2085b03908fe
                 </div>
 
             </div>

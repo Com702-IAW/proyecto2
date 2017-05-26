@@ -31,6 +31,7 @@
                 <input name="marca" placeholder="Ingresar Marca" class="form-control" required="required"></input>
                 {{ csrf_field() }}
             </div>
+<<<<<<< HEAD
 
             <div class="form-group">
                 <label for="precio" class="col-md-6">Precio</label>
@@ -39,6 +40,16 @@
             </div>
 
             <div class="form-group">
+=======
+
+            <div class="form-group">
+                <label for="precio" class="col-md-6">Precio</label>
+                <input name="precio" placeholder="Ingresar Precio" class="form-control" required="required"></input>
+                {{ csrf_field() }}
+            </div>
+
+            <div class="form-group">
+>>>>>>> 04c3040d69e6eff0c9ca1feda58e2085b03908fe
                 <label for="color" class="col-md-6">Color</label>
                 <input name="color" placeholder="Ingresar Color" class="form-control" required="required"></input>
                 {{ csrf_field() }}
@@ -57,6 +68,7 @@
             </div>
             
         </form>
+<<<<<<< HEAD
 
     </section>
 
@@ -97,6 +109,30 @@
                 </tbody>
             </table>
 
+=======
+
+    </section>
+
+    <div class="col-md-12">
+        <hr/>
+    </div>
+
+     <section id="section-agregar" class="section col-md-12" data-stellar-background-ratio="2">
+        <h1> Eliminar Componente </h1>
+
+        <form action="{{ url('panelAdmin/store') }}" method="post" role="form" class="form-horizontal col-md-7">        
+            <div class="form-group">
+                <label for="tipo" class="col-md-6">Componente</label>
+                <select name = "tipo" class="form-control">
+                    <option value="0">Monitor</option>
+                    <option value="1">Teclado</option> 
+                    <option value="2">Mouse</option> 
+                    <option value="3">Parlantes</option> 
+                </select>
+                {{ csrf_field() }}
+            </div>
+
+>>>>>>> 04c3040d69e6eff0c9ca1feda58e2085b03908fe
             
  
             <div class="col-md-offset-4">
