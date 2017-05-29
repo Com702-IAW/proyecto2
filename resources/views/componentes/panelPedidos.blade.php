@@ -10,22 +10,37 @@
 </section>
 
 <section id="section-about">
-
     <!--hacer modal-->
     <div class="container" style= "background:white">
 
         <div class="container" style= "background:white">
 
-            <div class="row well" style= "background:white">
+             <div class="row well" style= "background:white">
 
-                <div class="col-md-5 col-xs-12" style="text-align:center">
+                <h1>Mis pedidos</h1>
+                <table class="table table-striped" id ="tablaPedidos">
+                    <thead>
+                        <th>Numero</th>
+                        <th>Monitor</th>
+                        <th>Teclado</th>
+                        <th>Mouse</th>
+                        <th>Parlante</th>
+                    </thead>
+                </table>
+            </div>
 
-                    <h1>Mis pedidos</h1>
-                    <table id="tabla">  <!--hacer un js onda controlador para cargar todos los pedidos-->
-                        <tr><th>Pedido</th></tr>
-                    </table>
-                </div>
-
+            <div class="col-md-7 col-xs-12">
+                    <a class="thumbnail col-xs-12" id="panelgeneral">
+                        <div>
+                            <img id="imagen0" />
+                            <img id="imagen3" />
+                        </div>
+                        <div>
+                            <img id="imagen1"  />
+                            <img id="imagen2"  />
+                        </div>
+                        <div id = "preciototal">  </div>
+                    </a>
             </div>
         </div>
     </div>
@@ -62,8 +77,8 @@
             </div>
         </div>
     </section>
+
      <script type="text/javascript" src="js/jquery-1.11.0.min.js"></script>
-    <script type="text/javascript" src="js/vistaComponentes.js"></script>
-    <script type="text/javascript" src="js/controlador.js"></script>
-    <script type="text/javascript" src="js/carrito.js"></script>
+    <script type="text/javascript" src="js/controladorPedidos.js"></script>
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 </body>

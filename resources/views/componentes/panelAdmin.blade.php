@@ -1,7 +1,6 @@
 @extends('layouts.app6')
 @extends('layouts.app3')
 
-
 <!DOCTYPE html>
 <html class="no-js"> <!--<![endif]-->
  <body>
@@ -14,7 +13,7 @@
     <section id="section-agregar" class="section" data-stellar-background-ratio="2">
         <h1> Agregar Componente </h1>
 
-        <form action="{{ url('panelAdmin/store') }}" method="post" role="form" class="form-horizontal col-md-7">        
+        <form action="{{ url('panelAdmin/store') }}" method="post" role="form" class="form-horizontal col-md-12">        
             <div class="form-group">
                 <label for="tipo" class="col-md-6">Componente</label>
                 <select name = "tipo" class="form-control">
@@ -45,9 +44,10 @@
             </div>
 
             <div class="form-group">
-                <label for="imagen" class="col-md-6">Imagen</label>
-                <input name="imagen" placeholder="Ingresar Imagen" class="form-control" required="required"></input>
-                {{ csrf_field() }}
+                <form enctype ="multipart/form-data" action="" method ="post">
+                    <label for ="uploadfile"> Imagen </label> 
+                    <input name = "imagen" type = "file" />
+                </form>               
             </div>
  
             <div class="col-md-offset-4">
@@ -64,46 +64,19 @@
         <hr/>
     </div>
 
-     <section id="section-agregar" class="section col-md-12" data-stellar-background-ratio="2">
+     <section id="section-eliminar" class="section col-md-12" data-stellar-background-ratio="2">
         <h1> Eliminar Componente </h1>
 
-        <form action="{{ url('panelAdmin/store') }}" method="post" role="form" class="form-horizontal col-md-7">        
-            <div class="form-group">
-                <label for="tipo" class="col-md-6">Componente</label>
-                <select name = "tipo" class="form-control">
-                    <option value="0">Monitor</option>
-                    <option value="1">Teclado</option> 
-                    <option value="2">Mouse</option> 
-                    <option value="3">Parlantes</option> 
-                </select>
-                {{ csrf_field() }}
-            </div>
-            <table class="table table-striped">
+     <form action="{{ url('panelAdmin/delete') }}" method="post" role="form" class="form-horizontal col-md-12">        
+
+        <table class="table table-striped" id="tabla-eliminar">
                 <thead>
+                    <th>Tipo
                     <th>Marca</th>
                     <th>Color</th>
                     <th>Precio</th>
-                    <th>Accion</th>
                 </thead>
-                <tbody>
-                    @foreach($componentes[0] as $componente)
-                        <tr>
-                            <td>{{ $componente->marca}} </td>
-                            <td>{{ $componente->color}} </td>
-                            <td>{{ $componente->precio}} </td>
-                            <td><a href="" class="btn btn-danger"></a></td>
-                        </tr>
-                    @endforeach
-                </tbody>
-            </table>
-
-            
- 
-            <div class="col-md-offset-4">
-                <button type="submit" class="btn btn-primary" >
-                    Eliminar Componente
-                </button>
-            </div>
+        </table>
             
         </form>
 
@@ -140,5 +113,10 @@
                 </div>
         </div>
     </div>
-</section>
+    </section>
+
+    <script type="text/javascript" src="js/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="js/controladorAdmin.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
 </body>

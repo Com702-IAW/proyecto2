@@ -15,6 +15,10 @@ Route::get('/', 'HomeController@index');
 
 Route::get('/componentes/json', 'ComponenteController@json');
 
+Route::get('/pedidos/listado','PedidoController@json');
+
+Route::get('/pedidos/listado/{id}','PedidoController@pedidoId');
+
 Auth::routes();
 
 Route::get('/producto','ComponenteController@index')->name('producto');

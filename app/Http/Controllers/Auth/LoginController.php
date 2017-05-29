@@ -45,9 +45,6 @@ class LoginController extends Controller
       
       return redirect('home');
     }
-}
-
-
 
   public function redirectToProvider(){
       return Socialite::driver('github')->redirect();
